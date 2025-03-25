@@ -1,98 +1,234 @@
-'use client';
+"use client";
 
-import React, { useState } from 'react';
-import Link from 'next/link';
-import styles from './Navbar.module.css';
+import React, { useState } from "react";
+import Link from "next/link";
+import { useTheme } from "next-themes";
 
 // Componente para o ícone de dropdown
-const DropdownArrow = () => (
-  <svg className={styles.dropdownArrow} viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M2 4L5 7L8 4" stroke="#333333" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+const DropdownIcon = () => (
+  <svg
+    className="w-4 h-4 ml-1"
+    fill="none"
+    stroke="currentColor"
+    viewBox="0 0 24 24"
+  >
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth={2}
+      d="M19 9l-7 7-7-7"
+    />
   </svg>
 );
 
 // Componente para o ícone de seta à direita
 const RightArrow = () => (
-  <svg className={styles.rightArrow} viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M3 5H7M7 5L5 3M7 5L5 7" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+  <svg
+    className="w-4 h-4 ml-1"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
+    <path d="M5 12h14m-6-6l6 6-6 6" />
   </svg>
 );
 
-// Componente para o ícone de menu hamburguer
-const HamburgerIcon = () => (
-  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M3 12H21M3 6H21M3 18H21" stroke="#333333" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-  </svg>
-);
-
-const Navbar = () => {
+export function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const navItems = ['Products', 'For Business', 'For Developers', 'Pricing', 'Research', 'Company', 'Docs', 'Contact'];
+  const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+  const { theme, setTheme } = useTheme();
+
+  const toggleDropdown = (dropdown: string) => {
+    setActiveDropdown(activeDropdown === dropdown ? null : dropdown);
+  };
 
   return (
-    <nav className={styles.navbar}>
-      {/* Logo */}
-      <div className={styles.logo}>
-        <Link href="/">together.ai</Link>
-      </div>
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-gray-200">
+      <div className="max-w-[1400px] mx-auto px-8">
+        <div className="flex items-center justify-between h-[72px]">
+          {/* Logo */}
+          <Link href="/" className="flex items-center">
+            <span className="text-[15px] font-medium text-gray-900">together.ai</span>
+          </Link>
 
-      {/* Links de navegação (desktop) */}
-      <ul className={styles.navLinks}>
-        {navItems.map((item) => (
-          <li key={item}>
-            <Link href={`/${item.toLowerCase().replace(' ', '-')}`} className={styles.navLink}>
-              <span>{item}</span>
-              {item !== 'Contact' && <DropdownArrow />}
+          {/* Menu desktop */}
+          <div className="hidden lg:flex items-center space-x-6">
+            <div className="relative">
+              <button
+                className="flex items-center text-[14px] text-gray-600 hover:text-gray-900"
+                onClick={() => toggleDropdown("products")}
+              >
+                Products
+                <DropdownIcon />
+              </button>
+            </div>
+
+            <div className="relative">
+              <button
+                className="flex items-center text-[14px] text-gray-600 hover:text-gray-900"
+                onClick={() => toggleDropdown("business")}
+              >
+                For Business
+                <DropdownIcon />
+              </button>
+            </div>
+
+            <div className="relative">
+              <button
+                className="flex items-center text-[14px] text-gray-600 hover:text-gray-900"
+                onClick={() => toggleDropdown("developers")}
+              >
+                For Developers
+                <DropdownIcon />
+              </button>
+            </div>
+
+            <div className="relative">
+              <button
+                className="flex items-center text-[14px] text-gray-600 hover:text-gray-900"
+                onClick={() => toggleDropdown("pricing")}
+              >
+                Pricing
+                <DropdownIcon />
+              </button>
+            </div>
+
+            <Link
+              href="/research"
+              className="text-[14px] text-gray-600 hover:text-gray-900"
+            >
+              Research
             </Link>
-          </li>
-        ))}
-      </ul>
 
-      {/* Botão CTA (desktop) */}
-      <div className={styles.cta}>
-        <Link href="/get-started" className={styles.ctaButton}>
-          Get Started <RightArrow />
-        </Link>
-      </div>
+            <div className="relative">
+              <button
+                className="flex items-center text-[14px] text-gray-600 hover:text-gray-900"
+                onClick={() => toggleDropdown("company")}
+              >
+                Company
+                <DropdownIcon />
+              </button>
+            </div>
 
-      {/* Botão hamburguer (mobile) */}
-      <button 
-        className={styles.hamburger} 
-        onClick={() => setIsMenuOpen(!isMenuOpen)}
-        aria-label="Toggle menu"
-      >
-        <HamburgerIcon />
-      </button>
+            <Link
+              href="/docs"
+              className="text-[14px] text-gray-600 hover:text-gray-900"
+            >
+              Docs
+            </Link>
 
-      {/* Menu mobile */}
-      {isMenuOpen && (
-        <div className={styles.mobileMenu}>
-          <ul className={styles.mobileNavLinks}>
-            {navItems.map((item) => (
-              <li key={item}>
-                <Link
-                  href={`/${item.toLowerCase().replace(' ', '-')}`}
-                  className={styles.mobileNavLink}
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  {item}
-                </Link>
-              </li>
-            ))}
-            <li>
+            <Link
+              href="/contact"
+              className="text-[14px] text-gray-600 hover:text-gray-900"
+            >
+              Contact
+            </Link>
+
+            <Link
+              href="/get-started"
+              className="flex items-center text-[14px] text-white bg-blue-500 hover:bg-blue-600 rounded-full px-4 py-2 ml-4"
+            >
+              Get Started
+              <RightArrow />
+            </Link>
+          </div>
+
+          {/* Botão hamburguer (mobile) */}
+          <button
+            className="lg:hidden p-2 rounded-lg text-gray-600 hover:text-gray-900"
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            aria-label="Toggle menu"
+          >
+            <svg
+              className="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              {isMenuOpen ? (
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              ) : (
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M4 6h16M4 12h16M4 18h16"
+                />
+              )}
+            </svg>
+          </button>
+        </div>
+
+        {/* Menu mobile */}
+        {isMenuOpen && (
+          <div className="lg:hidden">
+            <div className="px-2 pt-2 pb-3 space-y-1">
+              <Link
+                href="/products"
+                className="block px-3 py-2 text-base font-medium text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md"
+              >
+                Products
+              </Link>
+              <Link
+                href="/business"
+                className="block px-3 py-2 text-base font-medium text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md"
+              >
+                For Business
+              </Link>
+              <Link
+                href="/developers"
+                className="block px-3 py-2 text-base font-medium text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md"
+              >
+                For Developers
+              </Link>
+              <Link
+                href="/pricing"
+                className="block px-3 py-2 text-base font-medium text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md"
+              >
+                Pricing
+              </Link>
+              <Link
+                href="/research"
+                className="block px-3 py-2 text-base font-medium text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md"
+              >
+                Research
+              </Link>
+              <Link
+                href="/company"
+                className="block px-3 py-2 text-base font-medium text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md"
+              >
+                Company
+              </Link>
+              <Link
+                href="/docs"
+                className="block px-3 py-2 text-base font-medium text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md"
+              >
+                Docs
+              </Link>
+              <Link
+                href="/contact"
+                className="block px-3 py-2 text-base font-medium text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md"
+              >
+                Contact
+              </Link>
               <Link
                 href="/get-started"
-                className={styles.mobileCtaButton}
-                onClick={() => setIsMenuOpen(false)}
+                className="block px-3 py-2 text-base font-medium text-white bg-blue-500 hover:bg-blue-600 rounded-full text-center"
               >
-                Get Started <RightArrow />
+                Get Started
               </Link>
-            </li>
-          </ul>
-        </div>
-      )}
+            </div>
+          </div>
+        )}
+      </div>
     </nav>
   );
-};
-
-export default Navbar;
+}
