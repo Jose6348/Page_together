@@ -5,7 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { useTheme } from "next-themes";
 import CircleBackground from "@/assets/Circulo_da_nuvem.svg";
-import BlueCloud from "@/assets/Nuvem_azul.svg";
+import BlueCloud from "@/assets/Nuvem_Azul.svg";
 
 // Componente para o ícone de dropdown
 const DropdownIcon = () => (
