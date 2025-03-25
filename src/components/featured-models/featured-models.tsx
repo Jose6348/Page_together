@@ -114,12 +114,14 @@ export default function FeaturedModels() {
   )
 
   const nextSlide = () => {
-    setCurrentIndex((prev) => (prev + 2) % Math.max(filteredModels.length - 1, 1))
+    setCurrentIndex((prev) => 
+      prev + 2 >= filteredModels.length ? 0 : prev + 2
+    )
   }
 
   const prevSlide = () => {
     setCurrentIndex((prev) => 
-      prev === 0 ? Math.max(filteredModels.length - 2, 0) : prev - 2
+      prev === 0 ? Math.max(0, filteredModels.length - 2) : prev - 2
     )
   }
 
