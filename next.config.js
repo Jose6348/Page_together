@@ -6,6 +6,7 @@ const nextConfig = {
     domains: ['images.unsplash.com'],
     dangerouslyAllowSVG: true,
     contentDispositionType: 'attachment',
+    unoptimized: true,
   },
   compiler: {
     removeConsole: process.env.NODE_ENV === 'production',

@@ -4,8 +4,6 @@ import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { useTheme } from "next-themes";
-import CircleBackground from "@/assets/Circulo_da_nuvem.svg";
-import BlueCloud from "@/assets/Nuvem_Azul.svg";
 
 // Componente para o ícone de dropdown
 const DropdownIcon = () => (
@@ -200,15 +198,21 @@ export default function HeroSection() {
       <div className="hidden lg:block w-[50%] relative">
         <div className="absolute top-[90px] right-[-80px] w-[600px] h-[600px]">
           <div className="relative w-full h-full">
-            <CircleBackground
-              className="absolute inset-0 transform -translate-x-[220px] dark:opacity-50"
+            <Image
+              src="https://raw.githubusercontent.com/Jose6348/Images_Projects/d8ba6b539e05eed066a8643d6e6b4dcd24fa7c88/public/Circulo_da_nuvem.svg"
+              alt="Circle Background"
               width={600}
               height={600}
+              className="absolute inset-0 transform -translate-x-[220px] dark:opacity-50"
+              priority
             />
-            <BlueCloud
-              className="absolute top-1/2 left-1/2 transform -translate-x-[180%] -translate-y-1/2 z-20 dark:opacity-70"
+            <Image
+              src="https://raw.githubusercontent.com/Jose6348/Images_Projects/d8ba6b539e05eed066a8643d6e6b4dcd24fa7c88/public/Nuvem_Azul.svg"
+              alt="Blue Cloud"
               width={160}
               height={160}
+              className="absolute top-1/2 left-1/2 transform -translate-x-[180%] -translate-y-1/2 z-20 dark:opacity-70"
+              priority
             />
             
             {/* Model Names */}
