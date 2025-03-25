@@ -4,6 +4,7 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import Navbar from '@/components/navbar/navbar'
 import FeaturedModels from '@/components/featured-models/featured-models'
+import { CloudModels } from '@/components/cloud-models/cloud-models'
 
 const models = [
   { name: 'Llama 3.3 70B', position: 'top-[15%] left-[20%]' },
@@ -54,24 +55,8 @@ export default function Home() {
         </div>
 
         {/* Cloud Models */}
-        <div className="relative mt-16 h-[600px]">
-          <div className="absolute inset-0 flex items-center justify-center">
-            <div className="w-96 h-96 bg-blue-100/50 rounded-full blur-[100px]" />
-          </div>
-          {models.map((model, index) => (
-            <motion.div
-              key={model.name}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.1, duration: 0.5 }}
-              className={`absolute ${model.position} transform -translate-x-1/2`}
-            >
-              <div className="flex items-center space-x-2 rounded-full bg-white shadow-sm px-3 py-1.5 text-sm">
-                <span className="h-1.5 w-1.5 rounded-full bg-green-400" />
-                <span className="text-gray-700">{model.name}</span>
-              </div>
-            </motion.div>
-          ))}
+        <div className="mt-16">
+          <CloudModels />
         </div>
       </section>
 
