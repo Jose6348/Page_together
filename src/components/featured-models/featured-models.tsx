@@ -64,7 +64,7 @@ const models: Model[] = [
     type: 'AUDIO',
     name: 'CARTESIA SONIC-2',
     description: 'Low-latency, ultra-realistic voice model, served in partnership with Cartesia.',
-    logo: '/Logos/codex.svg',
+    logo: '/Logos/Cartesia_logo.jpeg',
     isNew: true
   },
   {

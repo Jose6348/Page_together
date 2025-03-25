@@ -4,6 +4,8 @@ import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { useTheme } from "next-themes";
+import CircleBackground from "@/assets/Circulo_da_nuvem.svg";
+import BlueCloud from "@/assets/Nuvem_azul.svg";
 
 // Componente para o ícone de dropdown
 const DropdownIcon = () => (
@@ -198,21 +200,15 @@ export default function HeroSection() {
       <div className="hidden lg:block w-[50%] relative">
         <div className="absolute top-[90px] right-[-80px] w-[600px] h-[600px]">
           <div className="relative w-full h-full">
-            <Image
-              src="/Circulo_da_nuvem.svg"
-              alt="Circle Background"
+            <CircleBackground
+              className="absolute inset-0 transform -translate-x-[220px] dark:opacity-50"
               width={600}
               height={600}
-              className="absolute inset-0 transform -translate-x-[220px] dark:opacity-50"
-              priority
             />
-            <Image
-              src="/Nuvem_azul.svg"
-              alt="Blue Cloud"
+            <BlueCloud
+              className="absolute top-1/2 left-1/2 transform -translate-x-[180%] -translate-y-1/2 z-20 dark:opacity-70"
               width={160}
               height={160}
-              className="absolute top-1/2 left-1/2 transform -translate-x-[180%] -translate-y-1/2 z-20 dark:opacity-70"
-              priority
             />
             
             {/* Model Names */}
