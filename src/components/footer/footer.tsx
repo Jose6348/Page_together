@@ -73,7 +73,7 @@ const Footer = () => {
           <div className="flex items-center justify-between">
             <div className="flex items-center">
               <Image
-                src="/logos/Logo_Together.png"
+                src="https://github.com/Jose6348/Images_Projects/blob/main/public/logos/Logo_Together.png?raw=true"
                 alt="Together Logo"
                 width={120}
                 height={40}

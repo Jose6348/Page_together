@@ -17,79 +17,79 @@ const models: Model[] = [
     type: 'CHAT',
     name: 'DEEPSEEK R1',
     description: 'Open-source reasoning model rivaling OpenAI-a1, excelling in math, code, reasoning, and cost efficiency.',
-    logo: '/Logos/deeapseeak.webp',
+    logo: 'https://github.com/Jose6348/Images_Projects/raw/refs/heads/main/public/logos/deeapseeak.webp',
     isFree: true
   },
   {
     type: 'CHAT',
     name: 'DEEPSEEK R1 DISTILLED LLAMA 70B',
     description: 'Free endpoint to experiment the power of reasoning models. This distilled model beats GPT-4o on math & matches a1-mini on coding.',
-    logo: '/Logos/deeapseeak.webp',
+    logo: 'https://github.com/Jose6348/Images_Projects/raw/refs/heads/main/public/logos/deeapseeak.webp',
     isFree: true
   },
   {
     type: 'CHAT',
     name: 'LLAMA 3.3 70B INSTRUCT TURBO',
     description: 'Free endpoint to try this 70B multilingual LLM optimized for dialogue, excelling in benchmarks and surpassing many chat models.',
-    logo: '/Logos/Azure_logo.png',
+    logo: 'https://github.com/Jose6348/Images_Projects/blob/main/public/logos/Azure_logo.png?raw=true',
     isFree: true
   },
   {
     type: 'IMAGE',
     name: 'FLUX.1 [SCHNELL]',
     description: 'Free endpoint for the SOTA open-source image generation model by Black Forest Labs.',
-    logo: '/Logos/flux_logo.webp',
+    logo: 'https://github.com/Jose6348/Images_Projects/raw/refs/heads/main/public/logos/flux_logo.webp',
     isFree: true
   },
   {
     type: 'VISION',
     name: 'LLAMA 3.2 11B',
     description: 'Free endpoint to try Llama 3.2 11B.',
-    logo: '/Logos/Azure_logo.png',
+    logo: 'https://github.com/Jose6348/Images_Projects/blob/main/public/logos/Azure_logo.png?raw=true',
     isFree: true
   },
   {
     type: 'CHAT',
     name: 'DEEPSEEK-V3',
     description: "DeepSeek's latest open Mixture-of-Experts model challenging top AI models at much lower cost.",
-    logo: '/Logos/deeapseeak.webp'
+    logo: 'https://github.com/Jose6348/Images_Projects/raw/refs/heads/main/public/logos/deeapseeak.webp'
   },
   {
     type: 'IMAGE',
     name: 'FLUX.1 [PRO]',
     description: 'Premium image generation model by Black Forest Labs.',
-    logo: '/Logos/flux_logo.webp'
+    logo: 'https://github.com/Jose6348/Images_Projects/raw/refs/heads/main/public/logos/flux_logo.webp'
   },
   {
     type: 'AUDIO',
     name: 'CARTESIA SONIC-2',
     description: 'Low-latency, ultra-realistic voice model, served in partnership with Cartesia.',
-    logo: '/Logos/Cartesia_logo.jpeg',
+    logo: 'https://github.com/Jose6348/Images_Projects/blob/main/public/logos/Cartesia_logo.jpeg?raw=true',
     isNew: true
   },
   {
     type: 'CHAT',
     name: 'MISTRAL SMALL 3',
     description: '24B model rivaling GPT-4o mini, and larger models like Llama 3.3 70B. Ideal for chat use cases like customer support, translation and summarization.',
-    logo: '/Logos/Mistral_logo.png'
+    logo: 'https://github.com/Jose6348/Images_Projects/blob/main/public/logos/Mistral_logo.png?raw=true'
   },
   {
     type: 'CHAT',
     name: 'QWEN2.5 72B',
     description: "Powerful decoder-only models available in 7B and 72B variants, developed by Alibaba Cloud's Qwen team for advanced language processing.",
-    logo: '/Logos/Qwen_logo.png'
+    logo: 'https://github.com/Jose6348/Images_Projects/blob/main/public/logos/Qwen_logo.png?raw=true'
   },
   {
     type: 'CHAT',
     name: 'GEMMA-2 INSTRUCT (27B)',
     description: 'Gemma is a family of lightweight, state-of-the-art open models from Google, built from the same research and technology used to create the Gemini models.',
-    logo: '/Logos/Google_logo.png'
+    logo: 'https://github.com/Jose6348/Images_Projects/blob/main/public/logos/Google_logo.png?raw=true'
   },
   {
     type: 'CHAT',
     name: 'LLAMA 3.1 NEMOTRON 70B INSTRUCT',
     description: 'This LLM is customized by NVIDIA to improve the helpfulness of LLM generated responses to user queries.',
-    logo: '/Logos/Nvidia_logo.png'
+    logo: 'https://github.com/Jose6348/Images_Projects/blob/main/public/logos/Nvidia_logo.png?raw=true'
   }
 ]
 
