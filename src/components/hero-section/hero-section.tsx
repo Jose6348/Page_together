@@ -30,60 +30,60 @@ export function Navbar() {
   };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-gray-200">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800">
       <div className="max-w-[1400px] mx-auto px-8">
         <div className="flex items-center justify-between h-[72px]">
           {/* Logo */}
           <Link href="/" className="flex items-center">
-            <span className="text-[15px] font-medium text-gray-900">together.ai</span>
+            <span className="text-[15px] font-medium text-gray-900 dark:text-white">together.ai</span>
           </Link>
 
           {/* Menu desktop */}
           <div className="hidden lg:flex items-center space-x-6">
             <div className="relative">
-              <button className="flex items-center text-[14px] text-gray-600 hover:text-gray-900" onClick={() => toggleDropdown("products")}>
+              <button className="flex items-center text-[14px] text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white" onClick={() => toggleDropdown("products")}>
                 Products
                 <DropdownIcon />
               </button>
             </div>
 
             <div className="relative">
-              <button className="flex items-center text-[14px] text-gray-600 hover:text-gray-900" onClick={() => toggleDropdown("business")}>
+              <button className="flex items-center text-[14px] text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white" onClick={() => toggleDropdown("business")}>
                 For Business
                 <DropdownIcon />
               </button>
             </div>
 
             <div className="relative">
-              <button className="flex items-center text-[14px] text-gray-600 hover:text-gray-900" onClick={() => toggleDropdown("developers")}>
+              <button className="flex items-center text-[14px] text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white" onClick={() => toggleDropdown("developers")}>
                 For Developers
                 <DropdownIcon />
               </button>
             </div>
 
             <div className="relative">
-              <button className="flex items-center text-[14px] text-gray-600 hover:text-gray-900" onClick={() => toggleDropdown("pricing")}>
+              <button className="flex items-center text-[14px] text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white" onClick={() => toggleDropdown("pricing")}>
                 Pricing
                 <DropdownIcon />
               </button>
             </div>
 
-            <Link href="/research" className="text-[14px] text-gray-600 hover:text-gray-900">
+            <Link href="/research" className="text-[14px] text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white">
               Research
             </Link>
 
             <div className="relative">
-              <button className="flex items-center text-[14px] text-gray-600 hover:text-gray-900" onClick={() => toggleDropdown("company")}>
+              <button className="flex items-center text-[14px] text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white" onClick={() => toggleDropdown("company")}>
                 Company
                 <DropdownIcon />
               </button>
             </div>
 
-            <Link href="/docs" className="text-[14px] text-gray-600 hover:text-gray-900">
+            <Link href="/docs" className="text-[14px] text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white">
               Docs
             </Link>
 
-            <Link href="/contact" className="text-[14px] text-gray-600 hover:text-gray-900">
+            <Link href="/contact" className="text-[14px] text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white">
               Contact
             </Link>
 
@@ -94,7 +94,7 @@ export function Navbar() {
           </div>
 
           {/* Botão hamburguer (mobile) */}
-          <button className="lg:hidden p-2 rounded-lg text-gray-600 hover:text-gray-900" onClick={() => setIsMenuOpen(!isMenuOpen)} aria-label="Toggle menu">
+          <button className="lg:hidden p-2 rounded-lg text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white" onClick={() => setIsMenuOpen(!isMenuOpen)} aria-label="Toggle menu">
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               {isMenuOpen ? (
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
@@ -109,28 +109,28 @@ export function Navbar() {
         {isMenuOpen && (
           <div className="lg:hidden">
             <div className="px-2 pt-2 pb-3 space-y-1">
-              <Link href="/products" className="block px-3 py-2 text-base font-medium text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md">
+              <Link href="/products" className="block px-3 py-2 text-base font-medium text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-50 dark:hover:bg-gray-800 rounded-md">
                 Products
               </Link>
-              <Link href="/business" className="block px-3 py-2 text-base font-medium text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md">
+              <Link href="/business" className="block px-3 py-2 text-base font-medium text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-50 dark:hover:bg-gray-800 rounded-md">
                 For Business
               </Link>
-              <Link href="/developers" className="block px-3 py-2 text-base font-medium text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md">
+              <Link href="/developers" className="block px-3 py-2 text-base font-medium text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-50 dark:hover:bg-gray-800 rounded-md">
                 For Developers
               </Link>
-              <Link href="/pricing" className="block px-3 py-2 text-base font-medium text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md">
+              <Link href="/pricing" className="block px-3 py-2 text-base font-medium text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-50 dark:hover:bg-gray-800 rounded-md">
                 Pricing
               </Link>
-              <Link href="/research" className="block px-3 py-2 text-base font-medium text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md">
+              <Link href="/research" className="block px-3 py-2 text-base font-medium text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-50 dark:hover:bg-gray-800 rounded-md">
                 Research
               </Link>
-              <Link href="/company" className="block px-3 py-2 text-base font-medium text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md">
+              <Link href="/company" className="block px-3 py-2 text-base font-medium text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-50 dark:hover:bg-gray-800 rounded-md">
                 Company
               </Link>
-              <Link href="/docs" className="block px-3 py-2 text-base font-medium text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md">
+              <Link href="/docs" className="block px-3 py-2 text-base font-medium text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-50 dark:hover:bg-gray-800 rounded-md">
                 Docs
               </Link>
-              <Link href="/contact" className="block px-3 py-2 text-base font-medium text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md">
+              <Link href="/contact" className="block px-3 py-2 text-base font-medium text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-50 dark:hover:bg-gray-800 rounded-md">
                 Contact
               </Link>
               <Link href="/get-started" className="block px-3 py-2 text-base font-medium text-white bg-blue-500 hover:bg-blue-600 rounded-full text-center">
@@ -167,27 +167,27 @@ export default function HeroSection() {
   ];
 
   return (
-    <section className="relative flex min-h-[90vh] px-4 max-w-[1400px] mx-auto bg-gradient-to-b from-white to-gray-50">
+    <section className="relative flex min-h-[90vh] px-4 max-w-[1400px] mx-auto bg-gradient-to-b from-white to-gray-50 dark:from-gray-900 dark:to-gray-800">
       {/* Left Content */}
       <div className="w-full lg:w-[50%] pt-[140px]">
         <div className="flex flex-col items-start space-y-6">
           <div className="relative">
-            <h1 className="text-7xl lg:text-[86px] font-medium leading-[0.95] tracking-tight">
+            <h1 className="text-7xl lg:text-[86px] font-medium leading-[0.95] tracking-tight text-gray-900 dark:text-white">
               together
               <span className="block relative mt-1">
-                <span className="absolute inset-0 bg-[#E6F0FF] rounded-lg transform -skew-y-2"></span>
+                <span className="absolute inset-0 bg-[#E6F0FF] dark:bg-blue-900/30 rounded-lg transform -skew-y-2"></span>
                 <span className="relative text-[#0066FF] z-10">.models</span>
               </span>
             </h1>
           </div>
-          <p className="text-2xl lg:text-[32px] text-[#4B5563] max-w-[580px] leading-[1.2] mt-2">
+          <p className="text-2xl lg:text-[32px] text-[#4B5563] dark:text-gray-300 max-w-[580px] leading-[1.2] mt-2">
             Build with 200+ open-source and specialized multimodal models for chat, images, code, and more.
           </p>
           <div className="flex flex-col sm:flex-row gap-5 pt-6">
             <button className="bg-[#0066FF] hover:bg-blue-600 text-white rounded-full px-8 py-3.5 text-[16px] font-medium transition-all duration-200">
               Start building now
             </button>
-            <button className="border border-[#E5E7EB] hover:border-gray-300 text-[#4B5563] hover:text-gray-900 rounded-full px-8 py-3.5 text-[16px] font-medium transition-all duration-200">
+            <button className="border border-[#E5E7EB] dark:border-gray-700 hover:border-gray-300 dark:hover:border-gray-600 text-[#4B5563] dark:text-gray-300 hover:text-gray-900 dark:hover:text-white rounded-full px-8 py-3.5 text-[16px] font-medium transition-all duration-200">
               Request dedicated endpoint
             </button>
           </div>
@@ -203,7 +203,7 @@ export default function HeroSection() {
               alt="Circle Background"
               width={600}
               height={600}
-              className="absolute inset-0 transform -translate-x-[220px]"
+              className="absolute inset-0 transform -translate-x-[220px] dark:opacity-50"
               priority
             />
             <Image
@@ -211,7 +211,7 @@ export default function HeroSection() {
               alt="Blue Cloud"
               width={160}
               height={160}
-              className="absolute top-1/2 left-1/2 transform -translate-x-[180%] -translate-y-1/2 z-20"
+              className="absolute top-1/2 left-1/2 transform -translate-x-[180%] -translate-y-1/2 z-20 dark:opacity-70"
               priority
             />
             
@@ -242,12 +242,12 @@ export default function HeroSection() {
               return (
                 <div
                   key={model}
-                  className="absolute whitespace-nowrap bg-white/90 backdrop-blur-sm px-2 py-0.5 rounded-full text-[11px] shadow-sm border border-gray-100 transform transition-all duration-300 hover:scale-105"
+                  className="absolute whitespace-nowrap bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm px-2 py-0.5 rounded-full text-[11px] shadow-sm border border-gray-100 dark:border-gray-700 transform transition-all duration-300 hover:scale-105 dark:text-gray-200"
                   style={{
                     transform: `translate(${x}px, ${y}px)`,
                     left: '50%',
                     top: '50%',
-                    zIndex: circleIndex + 10, // Garante que os círculos externos fiquem por cima
+                    zIndex: circleIndex + 10,
                   }}
                 >
                   <span className="inline-block w-1 h-1 bg-[#22C55E] rounded-full mr-1.5 align-middle"></span>

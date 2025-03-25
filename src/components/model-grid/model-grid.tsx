@@ -153,7 +153,7 @@ const ModelGrid = () => {
   };
 
   return (
-    <section className="py-16 bg-gray-50">
+    <section className="py-16 bg-gray-50 dark:bg-gray-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Categories and Search */}
         <div className="flex flex-wrap items-center justify-between gap-4 mb-8">
@@ -161,7 +161,7 @@ const ModelGrid = () => {
             {categories.map((category) => (
               <button
                 key={category.id}
-                className="px-4 py-2 text-sm rounded-full bg-white hover:bg-gray-100 transition-colors"
+                className="px-4 py-2 text-sm rounded-full bg-white dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors text-gray-900 dark:text-white"
               >
                 {category.label}
               </button>
@@ -169,11 +169,11 @@ const ModelGrid = () => {
           </div>
           
           <div className="relative">
-            <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
+            <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400 dark:text-gray-500" />
             <input
               type="text"
               placeholder="Find a model"
-              className="pl-10 pr-4 py-2 rounded-full border border-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              className="pl-10 pr-4 py-2 rounded-full border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
             />
           </div>
         </div>
@@ -183,15 +183,15 @@ const ModelGrid = () => {
           {allModels.slice(0, visibleCount).map((model, index) => (
             <div
               key={index}
-              className="bg-white rounded-lg p-4 border border-gray-200 hover:border-blue-500 transition-colors"
+              className="bg-white dark:bg-gray-800 rounded-lg p-4 border border-gray-200 dark:border-gray-700 hover:border-blue-500 dark:hover:border-blue-400 transition-colors"
             >
               <div className="flex items-center justify-between mb-4">
-                <span className="text-xs text-gray-500">{model.type}</span>
+                <span className="text-xs text-gray-500 dark:text-gray-400">{model.type}</span>
                 {model.isFree && (
-                  <span className="text-xs text-blue-500 font-medium">FREE</span>
+                  <span className="text-xs text-blue-500 dark:text-blue-400 font-medium">FREE</span>
                 )}
                 {model.isNew && (
-                  <span className="text-xs bg-blue-100 text-blue-600 px-2 py-0.5 rounded-full">NEW</span>
+                  <span className="text-xs bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-400 px-2 py-0.5 rounded-full">NEW</span>
                 )}
               </div>
 
@@ -205,12 +205,12 @@ const ModelGrid = () => {
                 />
               </div>
 
-              <h3 className="text-sm font-medium mb-2 line-clamp-2">{model.name}</h3>
-              <p className="text-xs text-gray-500 mb-4 line-clamp-2">
+              <h3 className="text-sm font-medium mb-2 line-clamp-2 text-gray-900 dark:text-white">{model.name}</h3>
+              <p className="text-xs text-gray-500 dark:text-gray-400 mb-4 line-clamp-2">
                 {model.description}
               </p>
 
-              <button className="text-xs text-gray-700 hover:text-blue-500 flex items-center gap-1">
+              <button className="text-xs text-gray-700 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400 flex items-center gap-1">
                 TRY THIS MODEL →
               </button>
             </div>
@@ -222,7 +222,7 @@ const ModelGrid = () => {
           <div className="flex justify-center mt-8">
             <button
               onClick={loadMore}
-              className="px-6 py-2 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition-colors"
+              className="px-6 py-2 bg-blue-600 text-white rounded-full hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 transition-colors"
             >
               Load more
             </button>
