@@ -43,22 +43,7 @@ yarn dev
 
 O projeto estará disponível em `http://localhost:3000`
 
-## 🏗️ Estrutura do Projeto
 
-```
-page-together/
-├── src/
-│   ├── app/
-│   │   ├── layout.tsx
-│   │   └── page.tsx
-│   ├── components/
-│   │   ├── navbar/
-│   │   └── featured-models/
-│   └── styles/
-├── public/
-├── package.json
-└── README.md
-```
 
 ## 🎨 Funcionalidades
 
@@ -74,8 +59,9 @@ Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para ma
 
 ## 👤 Autor
 
-Seu Nome
-- GitHub: [@seu-usuario](https://github.com/seu-usuario)
+José Jorge 
+
+- GitHub: [Jose6348](https://github.com/Jose6348)
 
 ## 🤝 Contribuindo
 
