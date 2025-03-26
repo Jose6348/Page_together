@@ -127,7 +127,7 @@ export default function FeaturedModels() {
 
   return (
     <section className="bg-[#111827] text-white py-16">
-      <div className="max-w-[1400px] mx-auto px-6">
+      <div className="max-w-[2100px] mx-auto px-6">
         <div className="flex gap-16">
           {/* Title and Description */}
           <div className="w-[300px] pt-8">

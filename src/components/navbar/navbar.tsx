@@ -71,7 +71,7 @@ export function Navbar() {
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 py-4">
-      <div className="max-w-[1400px] mx-auto px-8 flex items-center justify-between">
+      <div className="max-w-[2100px] mx-auto px-8 flex items-center justify-between">
         {/* Logo */}
         <Link 
           href="/" 

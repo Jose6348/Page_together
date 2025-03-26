@@ -5,21 +5,18 @@ import Link from "next/link";
 import Image from "next/image";
 import { useTheme } from "next-themes";
 
-// Componente para o ícone de dropdown
 const DropdownIcon = () => (
   <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
   </svg>
 );
 
-// Componente para o ícone de seta à direita
 const RightArrow = () => (
   <svg className="w-4 h-4 ml-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
     <path d="M5 12h14m-6-6l6 6-6 6" />
   </svg>
 );
 
-// Componente NavBar
 export function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
@@ -31,7 +28,7 @@ export function Navbar() {
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800">
-      <div className="max-w-[1400px] mx-auto px-8">
+      <div className="max-w-[2100px] mx-auto px-8">
         <div className="flex items-center justify-between h-[72px]">
           {/* Logo */}
           <Link href="/" className="flex items-center">
@@ -144,7 +141,6 @@ export function Navbar() {
   );
 }
 
-// Componente HeroSection
 export default function HeroSection() {
   const models = [
     "Llama 3.3 70B",
@@ -167,7 +163,7 @@ export default function HeroSection() {
   ];
 
   return (
-    <section className="relative flex min-h-[90vh] px-4 max-w-[1400px] mx-auto bg-gradient-to-b from-white to-gray-50 dark:from-gray-900 dark:to-gray-800">
+    <section className="relative flex min-h-[90vh] px-4 max-w-[2100px] mx-auto bg-gradient-to-b from-white to-gray-50 dark:from-gray-900 dark:to-gray-800">
       {/* Left Content */}
       <div className="w-full lg:w-[50%] pt-[140px]">
         <div className="flex flex-col items-start space-y-6">
@@ -194,7 +190,6 @@ export default function HeroSection() {
         </div>
       </div>
 
-      {/* Right Content - Models Visualization */}
       <div className="hidden lg:block w-[50%] relative">
         <div className="absolute top-[90px] right-[-80px] w-[600px] h-[600px]">
           <div className="relative w-full h-full">
@@ -217,26 +212,22 @@ export default function HeroSection() {
             
             {/* Model Names */}
             {models.map((model, index) => {
-              // Cria múltiplos círculos com raios diferentes
               const totalModels = models.length;
-              const circleIndex = Math.floor(index / (totalModels / 3)); // Divide em 3 círculos
-              const baseRadius = [180, 240, 300][circleIndex]; // Raios diferentes para cada círculo
+              const circleIndex = Math.floor(index / (totalModels / 3)); 
+              const baseRadius = [180, 240, 300][circleIndex]; 
               
-              // Ajusta o ângulo para distribuir os modelos em cada círculo
               const modelsInCircle = Math.ceil(totalModels / 3);
-              const angleOffset = (circleIndex * 30) * (Math.PI / 180); // Offset para cada círculo
+              const angleOffset = (circleIndex * 30) * (Math.PI / 180); 
               const angle = ((index % modelsInCircle) * (360 / modelsInCircle) + (circleIndex * 20)) * (Math.PI / 180) + angleOffset;
               
-              // Calcula a posição com um pouco de aleatoriedade
-              const randomOffset = Math.sin(index) * 15; // Adiciona variação baseada no índice
+              const randomOffset = Math.sin(index) * 15; 
               const radius = baseRadius + randomOffset;
-              const x = Math.cos(angle) * radius - 220; // Deslocamento maior para a esquerda
+              const x = Math.cos(angle) * radius - 220; 
               const y = Math.sin(angle) * radius;
 
-              // Evita posicionar cards no centro (onde está a nuvem)
               const distanceFromCenter = Math.sqrt(x * x + y * y);
               if (distanceFromCenter < 80) {
-                return null; // Não renderiza cards muito próximos ao centro
+                return null; 
               }
 
               return (
